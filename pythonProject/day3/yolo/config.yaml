@@ -1,0 +1,13 @@
+# 数据集路径（可以是绝对路径或相对路径）
+#path: ./face_datasets          # 数据集根目录
+train: ./face_datasets/images            # 训练集图片路径 - labels标记文件自动推断
+# val不写，YOLO会自动从train中切分10%作为验证集。val用来调超参数、早停等，会反复看，但不是调整参数w和b
+val: ./face_datasets/images               # 验证集也用同一个（模型会自动拆分训练集的一部分做验证）
+
+# 写法同上
+# train: ./face_datasets/train/images
+# val: ./face_datasets/val/images
+
+nc: 1                          # 类别数量
+names:
+  0: face                      # 类别名称
